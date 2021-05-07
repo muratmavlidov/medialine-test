@@ -1,5 +1,7 @@
 import { IGood, IName, INameBData } from '../../services/api';
 import ProductCard from '../product-card';
+import Image from 'next/image'
+
 import {
   Accordion,
   AccordionItem,
@@ -8,14 +10,6 @@ import {
   AccordionIcon,
   Box
 } from "@chakra-ui/react";
-
-import bookImage from '../../images/book.jpeg';
-import foodImage from '../../images/food.jpeg';
-import plumbingImage from '../../images/plumbing.jpeg';
-import souvenirImage from '../../images/souvenir.jpeg';
-import sparesImage from '../../images/spares.jpeg';
-import sportImage from '../../images/sport.png';
-
 interface IProductItem {
   item: [string, IName],
   products: IGood[],
@@ -30,17 +24,17 @@ const ProductItem = ({ item, products, addProductToCart, usd }: IProductItem) =>
   const getImage = (groupId: string) => {
     switch(true) {
       case groupId == "1":
-        return bookImage
+        return '/book.jpeg'
       case groupId == "2":
-        return foodImage
+        return "/food.jpeg"
       case groupId == "5":
-        return sportImage
+        return "/sport.png"
       case groupId == "8":
-        return plumbingImage
+        return "/plumbing.jpeg"
       case groupId == "10":
-        return sparesImage
+        return "/spares.jpeg"
       case groupId == "15":
-        return souvenirImage
+        return "/souvenir.jpeg"
       default:
         return null
     }

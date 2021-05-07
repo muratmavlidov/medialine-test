@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@chakra-ui/react"
-import { isEmpty } from "lodash";
+import Image from 'next/image'
 
 export interface IProductData {
   image: string,
@@ -53,7 +53,7 @@ const ProductCard = ({ productData, isCart, addToCart, updateCartItem, usd }: IP
   return (
     <div className="b-products__item">
       <div className="b-products__itemImage">
-        <img src={productData.image}/>
+        <Image src={productData.image} width="100%" height="100%" />
       </div>
       <div className="b-products__itemBody">
         <h3 className="b-products__itemTitle">{productData.title}</h3>
